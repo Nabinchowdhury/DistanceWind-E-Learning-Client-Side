@@ -12,36 +12,36 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text text-lg text-black">Email</span>
                             </label>
-                            <input type="email" name="email" placeholder="Email" className="input w-full p-2 bg-slate-100" />
+                            <input type="email" name="email" placeholder="Email" className="input w-full p-2 bg-slate-100 text-black" />
 
                         </div>
                         <div className="form-control border-0">
                             <label className="label">
                                 <span className="label-text text-lg text-black">Password</span>
                             </label>
-                            <input type="password" name="password" placeholder="Password" className="input w-full p-2 bg-slate-100" />
+                            <input type="password" name="password" placeholder="Password" className="input w-full p-2 bg-slate-100 text-black" />
 
                             <p className="text-right my-3">
-                                <Link className='underline  text-yellow-400 fw-semibold hover:text-yellow-500'> Forgot Password?</Link>
+                                <Link className='underline  text-yellow-400 font-medium hover:text-yellow-500'> Forgot Password?</Link>
                             </p>
                         </div>
                         <div className="form-control border-0 my-2">
-                            <button className="btn btn-outline-warning fw-bold w-full">Log in</button>
+                            <button className="btn btn-primary font-bold w-full">Log in</button>
                         </div>
-                        <p className='text-black text-center'>Don't have an account?    <Link to="/signup" className='ml-1 underline text-yellow-400 fw-semibold hover:text-yellow-500'>Create an account</Link> </p>
+                        <p className='text-black text-center'>Don't have an account?    <Link to="/signup" className='ml-1 underline text-yellow-400 font-medium hover:text-yellow-500'>Create an account</Link> </p>
                     </div>
                 </div>
             </div>
 
-            <div className='flex justify-center items-start mt-4'>
-                <hr className='border-2 border-white w-1/12' />
+            <div className='flex justify-center items-center mt-4'>
+                <hr className=' border-white w-1/12' />
                 <p className='mx-2'>OR</p>
-                <hr className='border-2 border-white w-1/12' />
+                <hr className=' border-white w-1/12' />
             </div>
 
             <div className='flex flex-col items-center mx-10'>
-                <button className='btn btn-primary w-full sm:w-1/2 lg:w-1/4 my-2 fw-semibold rounded-pill'>Sign in with Facebook</button>
-                <button className='btn btn-warning w-full sm:w-1/2 lg:w-1/4 my-2 fw-semibold rounded-pill '>Sign in with Google</button>
+                <button className='btn btn-dark w-full sm:w-1/2 lg:w-1/4 my-2 font-medium '>Sign in with Github</button>
+                <button className='btn btn-warning w-full sm:w-1/2 lg:w-1/4 my-2 font-medium '>Sign in with Google</button>
             </div>
         </div >
 
