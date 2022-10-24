@@ -1,0 +1,13 @@
+.themeDark {
+    background-image: url("../../../images/darkHome.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.themeLight {
+    background-image: url("../../../images/lightHome.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}

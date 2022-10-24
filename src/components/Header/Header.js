@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaMoon } from 'react-icons/fa';
+import { FaMoon, FaSun } from 'react-icons/fa';
+import { useContext } from 'react';
+import { ThemeContext } from '../pages/layout/Main/Main';
 
 const Header = () => {
+    const { ETheme, setETheme } = useContext(ThemeContext)
     return (
         <div>
             <div className="navbar bg-base-100 lg:px-10">
@@ -15,13 +18,13 @@ const Header = () => {
                             <li><Link to="/courses">Courses</Link></li>
                             <li ><Link to="/FAQ">FAQ</Link></li>
                             <li><Link to="/blog">Blog</Link></li>
-                            <li><Link onclick=''>Theme </Link></li>
+                            <li><Link onClick={() => setETheme(!ETheme)}>Theme {ETheme ? <FaSun></FaSun> : <FaMoon></FaMoon>}</Link></li>
                             <Link><button className='btn btn-outline btn-warning mx-2'>Log in</button></Link>
                         </ul>
                     </div>
                     <div className='flex items-center'>
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGVN7KTJO2fVxTtArncxZdkGPld5-EZlCFTHPtNwwkeG2Q3t9a8mrOQqGJzPVnHlFnnYc&usqp=CAU" alt="" className='rounded w-1/6 rounded-full' />
-                        <p className='text-center'> <Link className="ml-3 font-serif text-lg sm:text-2xl md:text-3xl lg:text-4xl ">DistanceWind E-Learning</Link></p>
+                        <p className='text-center'> <Link to="/" className="ml-3 font-serif text-lg sm:text-2xl md:text-3xl lg:text-4xl ">DistanceWind E-Learning</Link></p>
 
 
 
@@ -32,7 +35,7 @@ const Header = () => {
                         <li><Link to="/courses">Courses</Link></li>
                         <li ><Link to="/FAQ">FAQ </Link></li>
                         <li><Link to="/blog">Blog</Link></li>
-                        <li><Link onclick=''>Theme <FaMoon></FaMoon></Link></li>
+                        <li><Link onClick={() => setETheme(!ETheme)}>Theme {ETheme ? <FaSun></FaSun> : <FaMoon></FaMoon>}</Link></li>
                         <Link><button className='btn btn-outline btn-warning mx-2'>Log in</button></Link>
                     </ul>
                 </div>
