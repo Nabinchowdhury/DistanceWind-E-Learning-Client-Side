@@ -1,10 +1,11 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
+import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const Signup = () => {
-    const { user, createNewUser, providerSignin, updateUserProfile } = useContext(AuthContext)
+    const { createNewUser, providerSignin, updateUserProfile } = useContext(AuthContext)
     const [error, setError] = useState("")
     const navigate = useNavigate()
 
@@ -22,12 +23,16 @@ const Signup = () => {
                 console.log("log in successfull", user)
                 form.reset()
                 updateUserProfile(profile)
+                    .then(() => { })
+                    .catch(() => { })
                 navigate('/courses')
                 setError("")
+                toast.success('Successfully Signed in!');
             })
             .catch(error => {
                 console.error(error)
                 setError(error.message)
+                toast.error('Sign in failed!');
             })
     }
 
@@ -38,16 +43,24 @@ const Signup = () => {
             .then(result => {
                 const user = result.user
                 console.log("Sign in Successfull", user)
+                toast.success('Successfully Signed in!');
                 navigate("/courses")
-            }).catch(error => setError(error.message))
+            }).catch(error => {
+                toast.error('Sign in failed!');
+                setError(error.message)
+            })
     }
     const handleproviderSignin = () => {
         providerSignin(googleProvider)
             .then(result => {
                 const user = result.user
                 console.log("Sign in Successfull", user)
+                toast.success('Successfully Signed in!');
                 navigate("/courses")
-            }).catch(error => setError(error.message))
+            }).catch(error => {
+                setError(error.message)
+                toast.error('Sign in failed!');
+            })
     }
     return (
 

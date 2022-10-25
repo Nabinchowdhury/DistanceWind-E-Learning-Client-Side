@@ -30,11 +30,12 @@ const Header = () => {
                             {user ?
                                 <>
                                     <button className='btn btn-outline btn-error btn-sm w-1/2 my-2' onClick={handleLogOut}>Log out</button>
-                                    <Link className="tooltip tooltip-right  w-1/4 border" data-tip={user?.displayName || user?.email}>
+                                    <Link to="/profile" className="tooltip tooltip-right  w-1/4 border" data-tip={user?.displayName || user?.email}>
                                         {user?.photoURL ? <img src={user?.photoURL} alt="" className='h-12 rounded-full' /> : <FaUserCircle className='rounded-full text-4xl mt-1'></FaUserCircle>}
                                     </Link>
                                 </>
-                                : <Link to="/login" className='w-1/2'><button className='btn btn-outline btn-warning btn-sm  my-2'>Log in</button></Link>}
+                                :
+                                <Link to="/login" className='w-1/2'><button className='btn btn-outline btn-warning btn-sm  my-2'>Log in</button></Link>}
                         </ul>
                     </div>
                     <div className='flex items-center'>
@@ -51,7 +52,7 @@ const Header = () => {
                         {user ?
                             <>
                                 <button className='btn btn-outline btn-error mx-2' onClick={handleLogOut}>Log out</button>
-                                <Link className="tooltip tooltip-left" data-tip={user?.displayName || user?.email}>
+                                <Link to="/profile" className="tooltip tooltip-left" data-tip={user?.displayName || user?.email}>
                                     {user?.photoURL ? <img src={user?.photoURL} alt="" className='h-12 rounded-full' /> : <FaUserCircle className='rounded-full text-4xl mt-1'></FaUserCircle>}
                                 </Link>
                             </>

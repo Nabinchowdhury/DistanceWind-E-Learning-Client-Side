@@ -1,6 +1,7 @@
 import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useState } from 'react';
 import { useContext } from 'react';
+import toast from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
@@ -27,10 +28,12 @@ const Login = () => {
                 form.reset()
                 navigate(from, { replace: true })
                 setError("")
+
             })
             .catch(error => {
                 console.error(error)
                 setError(error.message)
+                toast.error('Sign in failed!');
             })
     }
 
@@ -40,7 +43,11 @@ const Login = () => {
                 const user = result.user
                 console.log("Sign in Successfull", user)
                 navigate(from, { replace: true })
-            }).catch(error => setError(error.message))
+                toast.success('Successfully Signed in!');
+            }).catch(error => {
+                setError(error.message)
+                toast.error('Sign in failed!');
+            })
     }
     const handleproviderSignin = () => {
         providerSignin(googleProvider)
@@ -48,7 +55,11 @@ const Login = () => {
                 const user = result.user
                 console.log("Sign in Successfull", user)
                 navigate(from, { replace: true })
-            }).catch(error => setError(error.message))
+                toast.success('Successfully Signed in!');
+            }).catch(error => {
+                setError(error.message)
+                toast.error('Sign in failed!');
+            })
     }
 
     return (
