@@ -2,12 +2,12 @@
     background-image: url("../../../images/darkHome.webp");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 100%;
 }
 
 .themeLight {
     background-image: url("../../../images/lightHome.webp");
     background-repeat: no-repeat;
     background-size: cover;
-    height: 100vh;
+    height: 100%;
 }
