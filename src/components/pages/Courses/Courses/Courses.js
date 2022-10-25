@@ -11,8 +11,8 @@ const Courses = () => {
     return (
         <div className='flex flex-col lg:grid lg:grid-cols-6 xl:grid-cols-4 gap-4 ' >
             <div className='lg:col-span-2 xl:col-span-1 '>
-                <div className={`h-screen mt-10 ${ETheme ? 'themeLight' : "themeDark"}  rounded-2xl`}>
-                    <div className={` sticky top-10 `}>
+                <div className={`mt-20 sticky top-20 h-auto`}>
+                    <div className={`${ETheme ? 'themeLight' : "themeDark"}  rounded-2xl `}>
                         {
                             categoryCourses.map(courses => <LeftNav key={courses.categoryId} courseAll={courses}></LeftNav>)
                         }
