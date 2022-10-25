@@ -24,7 +24,7 @@ const Header = () => {
                     </div>
                     <div className='flex items-center'>
                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGVN7KTJO2fVxTtArncxZdkGPld5-EZlCFTHPtNwwkeG2Q3t9a8mrOQqGJzPVnHlFnnYc&usqp=CAU" alt="" className='rounded w-1/6 rounded-full' />
-                        <p className='text-center'> <Link to="/" className="ml-3 font-serif text-lg sm:text-2xl md:text-3xl lg:text-4xl ">DistanceWind E-Learning</Link></p>
+                        <p className='text-center'> <Link to="/" className="ml-3 font-serif font-extrabold text-lg sm:text-2xl md:text-3xl lg:text-4xl ">DistanceWind E-Learning</Link></p>
 
 
 
