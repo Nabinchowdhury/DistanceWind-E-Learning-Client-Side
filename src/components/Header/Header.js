@@ -8,6 +8,7 @@ import { AuthContext } from '../Contexts/AuthProvider/AuthProvider';
 const Header = () => {
     const { ETheme, setETheme } = useContext(ThemeContext)
     const { user, logUserOut } = useContext(AuthContext)
+    // const { email, photoURL } = user
     const handleLogOut = () => {
         logUserOut()
     }
@@ -25,7 +26,12 @@ const Header = () => {
                             <li ><Link to="/FAQ">FAQ</Link></li>
                             <li><Link to="/blog">Blog</Link></li>
                             <li><Link onClick={() => setETheme(!ETheme)}>Theme {ETheme ? <FaSun></FaSun> : <FaMoon></FaMoon>}</Link></li>
-                            <Link to="/login"><button className='btn btn-outline btn-warning mx-2'>Log in</button></Link>
+                            {user ?
+                                <>
+                                    <button className='btn btn-outline btn-error w-1/2' onClick={handleLogOut}>Log out</button>
+                                    <Link className='mt-2'><img src={user?.photoURL} alt="" className='h-12 rounded-full' /></Link>
+                                </>
+                                : <Link to="/login"><button className='btn btn-outline btn-warning mx-2'>Log in</button></Link>}
                         </ul>
                     </div>
                     <div className='flex items-center'>
@@ -39,7 +45,17 @@ const Header = () => {
                         <li className='px-1' ><Link to="/FAQ">FAQ </Link></li>
                         <li className='px-1'><Link to="/blog">Blog</Link></li>
                         <li className='px-1'><Link onClick={() => setETheme(!ETheme)}>Theme {ETheme ? <FaSun></FaSun> : <FaMoon></FaMoon>}</Link></li>
-                        {user ? <button className='btn btn-outline btn-error mx-2' onClick={handleLogOut}>Log out</button> : <Link to="/login"><button className='btn btn-outline btn-warning mx-2'>Log in</button></Link>}
+                        {user ?
+                            <>
+                                <button className='btn btn-outline btn-error mx-2' onClick={handleLogOut}>Log out</button>
+                                <Link className="tooltip tooltip-left" data-tip={user?.email}><img src={user?.photoURL} alt="" className='h-12 rounded-full' /></Link>
+                            </>
+                            :
+                            <>
+                                <Link to="/login"><button className='btn btn-outline btn-warning mx-2'>Log in</button></Link>
+
+                            </>
+                        }
                     </ul>
                 </div>
 

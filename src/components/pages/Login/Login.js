@@ -1,17 +1,18 @@
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import React, { useState } from 'react';
 import { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
-    const { logUserIn, googleSignIn } = useContext(AuthContext)
+    const { logUserIn, providerSignin } = useContext(AuthContext)
     const [error, setError] = useState("")
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || "/"
 
     const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -34,10 +35,15 @@ const Login = () => {
     }
 
     const handleGithubSignin = () => {
-
+        providerSignin(githubProvider)
+            .then(result => {
+                const user = result.user
+                console.log("Sign in Successfull", user)
+                navigate(from, { replace: true })
+            }).catch(error => setError(error.message))
     }
-    const handleGoogleSignin = () => {
-        googleSignIn(googleProvider)
+    const handleproviderSignin = () => {
+        providerSignin(googleProvider)
             .then(result => {
                 const user = result.user
                 console.log("Sign in Successfull", user)
@@ -86,7 +92,7 @@ const Login = () => {
 
             <div className='flex flex-col items-center mx-10'>
                 <button className='btn btn-dark w-full sm:w-1/2 lg:w-1/4 my-2 font-medium' onClick={handleGithubSignin}>Sign in with Github</button>
-                <button className='btn btn-warning w-full sm:w-1/2 lg:w-1/4 my-2 font-medium' onClick={handleGoogleSignin}>Sign in with Google</button>
+                <button className='btn btn-warning w-full sm:w-1/2 lg:w-1/4 my-2 font-medium' onClick={handleproviderSignin}>Sign in with Google</button>
             </div>
         </div >
 
