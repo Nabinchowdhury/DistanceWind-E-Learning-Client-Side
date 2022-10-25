@@ -5,7 +5,6 @@ import Footer from '../../../Footer/Footer';
 import Header from '../../../Header/Header';
 
 export const ThemeContext = createContext();
-// data - theme="cmyk"
 const Main = () => {
     const [ETheme, setETheme] = useState(true)
     console.log(ETheme)
