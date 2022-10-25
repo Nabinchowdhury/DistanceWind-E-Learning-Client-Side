@@ -10,7 +10,7 @@ const CourseCard = ({ course }) => {
     const { Duration, coins, id, image, lessons, price, title } = course
     return (
         <div>
-            <div className={`card ${ETheme ? "bg-slate-200" : "bg-gray-700"} w-80 h-full shadow-xl `}>
+            <div className={`card ${ETheme ? "bg-slate-200" : "bg-gray-700"} w-11/12 h-full shadow-xl `}>
                 <figure><img src={image} alt="Shoes" className='w-full h-56' /></figure>
                 <div className="card-body">
                     <h2 className="card-title">
