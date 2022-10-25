@@ -1,15 +1,17 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useState } from 'react';
 import { useContext } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
-    const { logUserIn } = useContext(AuthContext)
+    const { logUserIn, googleSignIn } = useContext(AuthContext)
     const [error, setError] = useState("")
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || "/"
 
+    const googleProvider = new GoogleAuthProvider();
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -30,6 +32,19 @@ const Login = () => {
                 setError(error.message)
             })
     }
+
+    const handleGithubSignin = () => {
+
+    }
+    const handleGoogleSignin = () => {
+        googleSignIn(googleProvider)
+            .then(result => {
+                const user = result.user
+                console.log("Sign in Successfull", user)
+                navigate(from, { replace: true })
+            }).catch(error => setError(error.message))
+    }
+
     return (
         <div >
             <form className="hero mt-20 " onSubmit={handleSubmit}>
@@ -70,8 +85,8 @@ const Login = () => {
             </div>
 
             <div className='flex flex-col items-center mx-10'>
-                <button className='btn btn-dark w-full sm:w-1/2 lg:w-1/4 my-2 font-medium '>Sign in with Github</button>
-                <button className='btn btn-warning w-full sm:w-1/2 lg:w-1/4 my-2 font-medium '>Sign in with Google</button>
+                <button className='btn btn-dark w-full sm:w-1/2 lg:w-1/4 my-2 font-medium' onClick={handleGithubSignin}>Sign in with Github</button>
+                <button className='btn btn-warning w-full sm:w-1/2 lg:w-1/4 my-2 font-medium' onClick={handleGoogleSignin}>Sign in with Google</button>
             </div>
         </div >
 
