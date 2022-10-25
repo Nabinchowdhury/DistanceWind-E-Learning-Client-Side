@@ -8,7 +8,7 @@ const Header = () => {
     const { ETheme, setETheme } = useContext(ThemeContext)
     return (
         <div>
-            <div className="navbar bg-base-100 lg:px-10">
+            <div className="navbar  lg:px-10">
                 <div className="navbar-start  w-full">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">

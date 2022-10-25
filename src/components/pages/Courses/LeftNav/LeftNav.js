@@ -8,7 +8,7 @@ const LeftNav = ({ courseAll }) => {
     // console.log(courses)
 
     return (
-        <div tabIndex={0} className={`collapse collapse-arrow border border-base-300 bg-base-100 rounded-box ${ETheme ? "bg-white" : "bg-transparent"}`}>
+        <div tabIndex={0} className={`collapse collapse-arrow border border-base-300 bg-base-100 rounded-box ${ETheme ? "bg-gradient-to-r from-slate-400" : "bg-transparent"}`}>
             <div className={`collapse-title text- md:text-lg lg:text-xl font-medium `}>
                 <h3 className="text-left ">{categoryName}</h3>
             </div>
