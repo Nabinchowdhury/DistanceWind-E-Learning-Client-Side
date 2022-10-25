@@ -19,7 +19,7 @@ const Header = () => {
                             <li ><Link to="/FAQ">FAQ</Link></li>
                             <li><Link to="/blog">Blog</Link></li>
                             <li><Link onClick={() => setETheme(!ETheme)}>Theme {ETheme ? <FaSun></FaSun> : <FaMoon></FaMoon>}</Link></li>
-                            <Link><button className='btn btn-outline btn-warning mx-2'>Log in</button></Link>
+                            <Link to="/login"><button className='btn btn-outline btn-warning mx-2'>Log in</button></Link>
                         </ul>
                     </div>
                     <div className='flex items-center'>
@@ -36,7 +36,7 @@ const Header = () => {
                         <li className='px-1' ><Link to="/FAQ">FAQ </Link></li>
                         <li className='px-1'><Link to="/blog">Blog</Link></li>
                         <li className='px-1'><Link onClick={() => setETheme(!ETheme)}>Theme {ETheme ? <FaSun></FaSun> : <FaMoon></FaMoon>}</Link></li>
-                        <Link><button className='btn btn-outline btn-warning mx-2'>Log in</button></Link>
+                        <Link to="/login"><button className='btn btn-outline btn-warning mx-2'>Log in</button></Link>
                     </ul>
                 </div>
 

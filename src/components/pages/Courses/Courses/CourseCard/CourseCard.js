@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { ThemeContext } from '../../../layout/Main/Main';
 
 const CourseCard = ({ course }) => {
-    console.log(course)
+    // console.log(course)
     const { ETheme } = useContext(ThemeContext)
     const { Duration, coins, id, image, lessons, price, title } = course
     return (
@@ -18,7 +18,7 @@ const CourseCard = ({ course }) => {
                         <div className="badge badge-secondary">{coins} <FaCoins className='ml-2'></FaCoins></div>
                     </h2>
                     <div className="card-actions  mt-5">
-                        <Link to=""><button className='btn btn-warning'>Get Premium Access <FaDollarSign className='ml-2'></FaDollarSign></button></Link>
+                        <Link to={`/course/${id}`}><button className='btn btn-warning'>Get Premium Access <FaDollarSign className='ml-2'></FaDollarSign></button></Link>
                     </div>
                 </div>
             </div>

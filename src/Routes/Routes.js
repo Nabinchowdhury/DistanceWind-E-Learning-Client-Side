@@ -4,6 +4,8 @@ import ErrorPage from "../components/pages/ErrorPage/ErrorPage";
 import Home from "../components/pages/Home/Home";
 import Main from "../components/pages/layout/Main/Main";
 import Login from "../components/pages/Login/Login";
+import PrivateRoute from "../components/pages/PrivateRoute/PrivateRoute";
+import Signup from "../components/pages/Signup/Signup";
 
 export const routes = createBrowserRouter([
     {
@@ -33,8 +35,13 @@ export const routes = createBrowserRouter([
                 element: <Login></Login>,
             },
             {
-                path: "/register",
-                element: <h1>hi</h1>,
+                path: "/signup",
+                element: <Signup></Signup>,
+            },
+            {
+                path: "/course/:id",
+                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`),
+                element: <PrivateRoute><h1>private</h1></PrivateRoute>,
             },
 
         ]
