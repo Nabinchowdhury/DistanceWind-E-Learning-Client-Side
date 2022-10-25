@@ -61,14 +61,14 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text text-lg text-black">Email</span>
                             </label>
-                            <input type="email" name="email" placeholder="Email" className="input w-full p-2 bg-slate-100 text-black" />
+                            <input type="email" name="email" placeholder="Email" className="input w-full p-2 bg-slate-100 text-black" required />
 
                         </div>
                         <div className="form-control border-0">
                             <label className="label">
                                 <span className="label-text text-lg text-black">Password</span>
                             </label>
-                            <input type="password" name="password" placeholder="Password" className="input w-full p-2 bg-slate-100 text-black" />
+                            <input type="password" name="password" placeholder="Password" className="input w-full p-2 bg-slate-100 text-black" required />
 
                             <p className="text-right my-3">
                                 <Link className='underline  text-yellow-400 font-medium hover:text-yellow-500'> Forgot Password?</Link>
