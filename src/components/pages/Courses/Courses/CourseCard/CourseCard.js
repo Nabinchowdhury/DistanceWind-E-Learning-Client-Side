@@ -1,19 +1,24 @@
 import React from 'react';
+import { useContext } from 'react';
+import { FaCoins, FaDollarSign } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import { ThemeContext } from '../../../layout/Main/Main';
 
-const CourseCard = () => {
+const CourseCard = ({ course }) => {
+    console.log(course)
+    const { ETheme } = useContext(ThemeContext)
+    const { Duration, coins, id, image, lessons, price, title } = course
     return (
         <div>
-            <div className="card  bg-base-100 shadow-xl">
-                <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+            <div className={`card ${ETheme ? "bg-slate-200" : "bg-gray-700"} w-80 h-full shadow-xl `}>
+                <figure><img src={image} alt="Shoes" className='w-full h-56' /></figure>
                 <div className="card-body">
                     <h2 className="card-title">
-                        Shoes!
-                        <div className="badge badge-secondary">NEW</div>
+                        {title}
+                        <div className="badge badge-secondary">{coins} <FaCoins className='ml-2'></FaCoins></div>
                     </h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                    <div className="card-actions justify-end">
-                        <div className="badge badge-outline">Fashion</div>
-                        <div className="badge badge-outline">Products</div>
+                    <div className="card-actions  mt-5">
+                        <Link to=""><button className='btn btn-warning'>Get Premium Access <FaDollarSign className='ml-2'></FaDollarSign></button></Link>
                     </div>
                 </div>
             </div>
