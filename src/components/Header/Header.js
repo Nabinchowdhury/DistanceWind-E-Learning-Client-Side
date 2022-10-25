@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaMoon, FaSun } from 'react-icons/fa';
+import { FaMoon, FaSun, FaUserCircle } from 'react-icons/fa';
 import { useContext } from 'react';
 import { ThemeContext } from '../pages/layout/Main/Main';
 import { AuthContext } from '../Contexts/AuthProvider/AuthProvider';
@@ -8,7 +8,8 @@ import { AuthContext } from '../Contexts/AuthProvider/AuthProvider';
 const Header = () => {
     const { ETheme, setETheme } = useContext(ThemeContext)
     const { user, logUserOut } = useContext(AuthContext)
-    // const { email, photoURL } = user
+    console.log(user)
+
     const handleLogOut = () => {
         logUserOut()
     }
@@ -28,10 +29,12 @@ const Header = () => {
                             <li><Link onClick={() => setETheme(!ETheme)}>Theme {ETheme ? <FaSun></FaSun> : <FaMoon></FaMoon>}</Link></li>
                             {user ?
                                 <>
-                                    <button className='btn btn-outline btn-error w-1/2' onClick={handleLogOut}>Log out</button>
-                                    <Link className='mt-2'><img src={user?.photoURL} alt="" className='h-12 rounded-full' /></Link>
+                                    <button className='btn btn-outline btn-error btn-sm w-1/2 my-2' onClick={handleLogOut}>Log out</button>
+                                    <Link className="tooltip tooltip-right  w-1/4 border" data-tip={user?.displayName || user?.email}>
+                                        {user?.photoURL ? <img src={user?.photoURL} alt="" className='h-12 rounded-full' /> : <FaUserCircle className='rounded-full text-4xl mt-1'></FaUserCircle>}
+                                    </Link>
                                 </>
-                                : <Link to="/login"><button className='btn btn-outline btn-warning mx-2'>Log in</button></Link>}
+                                : <Link to="/login" className='w-1/2'><button className='btn btn-outline btn-warning btn-sm  my-2'>Log in</button></Link>}
                         </ul>
                     </div>
                     <div className='flex items-center'>
@@ -48,7 +51,9 @@ const Header = () => {
                         {user ?
                             <>
                                 <button className='btn btn-outline btn-error mx-2' onClick={handleLogOut}>Log out</button>
-                                <Link className="tooltip tooltip-left" data-tip={user?.email}><img src={user?.photoURL} alt="" className='h-12 rounded-full' /></Link>
+                                <Link className="tooltip tooltip-left" data-tip={user?.displayName || user?.email}>
+                                    {user?.photoURL ? <img src={user?.photoURL} alt="" className='h-12 rounded-full' /> : <FaUserCircle className='rounded-full text-4xl mt-1'></FaUserCircle>}
+                                </Link>
                             </>
                             :
                             <>
@@ -60,7 +65,7 @@ const Header = () => {
                 </div>
 
             </div>
-        </div>
+        </div >
     );
 };
 

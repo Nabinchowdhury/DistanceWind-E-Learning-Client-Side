@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const Signup = () => {
-    const { user, createNewUser, providerSignin } = useContext(AuthContext)
+    const { user, createNewUser, providerSignin, updateUserProfile } = useContext(AuthContext)
     const [error, setError] = useState("")
     const navigate = useNavigate()
 
@@ -15,12 +15,13 @@ const Signup = () => {
         const password = form.password.value
         const name = form.name.value
         const photoURL = form.photoURL.value
-
+        const profile = { displayName: name, photoURL: photoURL }
         createNewUser(email, password)
             .then(result => {
                 const user = result.user
                 console.log("log in successfull", user)
                 form.reset()
+                updateUserProfile(profile)
                 navigate('/courses')
                 setError("")
             })
@@ -74,14 +75,14 @@ const Signup = () => {
                             <label className="label">
                                 <span className="label-text text-lg text-black">Email</span>
                             </label>
-                            <input type="email" name="email" placeholder="Email" className="input w-full p-2 bg-slate-100 text-black" />
+                            <input type="email" name="email" placeholder="Email" className="input w-full p-2 bg-slate-100 text-black" required />
                         </div>
 
                         <div className="form-control border-0">
                             <label className="label">
                                 <span className="label-text text-lg text-black">Password</span>
                             </label>
-                            <input type="password" name="password" placeholder="Password" className="input w-full p-2 bg-slate-100 text-black" />
+                            <input type="password" name="password" placeholder="Password" className="input w-full p-2 bg-slate-100 text-black" required />
                         </div>
 
                         <p className='text-red-500 font-bold'>{error}</p>
