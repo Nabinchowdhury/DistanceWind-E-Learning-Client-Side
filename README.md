@@ -19,6 +19,7 @@ For Client Side:
     • On courseDetails page there is a button where you ca download details of ypur selected course with on just a click.
     • Firebase OAuth is integreted to sign/log in or out. without log in private routes wont be shown
     • Environment variable is used for secure browsing.
+    • In the PremiumCheckout route a Coupon card is added. you can scratch and win conis. And Who Knows!! You may get a course free. 
     • Hosted in Firebase app.
 
 For Server Side:
