@@ -26,7 +26,8 @@ const PremiumAccess = () => {
     }
 
     return (
-        <div className={`flex flex-col lg:grid lg:grid-cols-6 xl:grid-cols-4 gap-4 my-10`} >
+
+        <div className={`flex flex-col lg:grid lg:grid-cols-6 xl:grid-cols-4 gap-4 mt-10`} >
 
 
             <div className={`lg:col-span-2 xl:col-span-1 `}>
@@ -67,7 +68,8 @@ const PremiumAccess = () => {
                         <figure className='xl:w-1/2'><img className='h-full w-full' src={image} alt="Album" /></figure>
 
 
-                        <div className="card-body">
+                        <div className="card-body border">
+                            <h1 className='text-center font-extrabold text-lg sm:text-xl md:text-2xl lg:text-3xl  mb-5 underline'>Get Premium Access</h1>
                             <h2 className="card-title font-bold text-xl">Course : {title}</h2>
                             <p className='flex justify-left items-center text-xl'>Price: {price}  <FaDollarSign ></FaDollarSign> / {coins} <FaCoins className='ml-2'></FaCoins> </p>
 

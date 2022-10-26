@@ -1,6 +1,7 @@
 Project name: DistanceWind E-Learning .
 
-Live Website Link: https://distancewind-e-learning.web.app/
+Live Website Link: https://distancewind-e-learning.web.app
+
 
 Client-side Repository: https://github.com/programming-hero-web-course1/b610-learning-platform-client-side-Nabinchowdhury
 

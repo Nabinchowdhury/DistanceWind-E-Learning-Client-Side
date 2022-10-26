@@ -35,11 +35,13 @@ const CourseDetails = () => {
             <div className={`lg:col-span-4 xl:col-span-3 `}>
 
                 <div className=' '>
-                    <div className="card xl:card-side bg-transparent shadow-xl mt-7 sticky top-20">
-                        <figure><img className='h-full w-full' src={image} alt="Album" /></figure>
+
+                    <div className="card xl:card-side bg-transparent shadow-xl mt-7 sticky top-20 border">
+                        <figure className='xl:w-1/2'><img className='h-full w-full' src={image} alt="Album" /></figure>
 
 
                         <div className="card-body" ref={ref}>
+                            <h1 className='text-center font-extrabold text-lg sm:text-xl md:text-2xl lg:text-3xl  mb-5'>Course Details</h1>
                             <h2 className="card-title font-bold text-xl">Course : {title}</h2>
 
                             <div className='flex justify-center items-center'>
