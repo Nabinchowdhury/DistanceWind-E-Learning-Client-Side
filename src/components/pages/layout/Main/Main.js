@@ -11,7 +11,7 @@ const Main = () => {
     const themeToggler = { ETheme, setETheme }
     return (
         <ThemeContext.Provider value={themeToggler}>
-            <div data-theme={ETheme ? "cmyk" : "night"} className={` ${ETheme ? 'bg-gradient-to-r from-slate-400' : "bg-gradient-to-r from-gray-700"}`}>
+            <div data-theme={ETheme ? "cmyk" : "night"} className={` ${ETheme ? 'bg-gradient-to-r from-slate-700' : "bg-gradient-to-r from-gray-400"}`}>
                 <Header></Header>
                 <Outlet></Outlet>
                 <Footer></Footer>

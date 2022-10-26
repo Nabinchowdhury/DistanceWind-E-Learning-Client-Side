@@ -38,7 +38,7 @@ const PremiumAccess = () => {
             </div>
             <div className={`lg:col-span-4 xl:col-span-3`}>
 
-                <div>
+                <div >
                     <div>
                         <h1>there willl be something</h1>
 
@@ -46,8 +46,8 @@ const PremiumAccess = () => {
 
 
 
-                    <div className="card lg:card-side bg-base-100 shadow-xl">
-                        <figure><img src={image} alt="Album" /></figure>
+                    <div className="card lg:card-side bg-transparent shadow-xl">
+                        <figure><img className='h-full w-full' src={image} alt="Album" /></figure>
                         <div className="card-body">
                             <h2 className="card-title">Course : {title}</h2>
                             <p>Click the button to listen on Spotiwhy app.</p>
