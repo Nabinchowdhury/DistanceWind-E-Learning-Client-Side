@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { createContext } from 'react';
 import { Outlet } from 'react-router-dom';
+
 import Footer from '../../../Footer/Footer';
 import Header from '../../../Header/Header';
 
 export const ThemeContext = createContext();
 const Main = () => {
     const [ETheme, setETheme] = useState(true)
-    // console.log(ETheme)
+    console.log(ETheme)
     const themeToggler = { ETheme, setETheme }
     return (
         <ThemeContext.Provider value={themeToggler}>
@@ -17,6 +18,7 @@ const Main = () => {
                 <Footer></Footer>
             </div>
         </ThemeContext.Provider>
+
     );
 };
 

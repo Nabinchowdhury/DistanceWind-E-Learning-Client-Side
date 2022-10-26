@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { FaArrowRight, FaCoins, FaDollarSign, FaDownload } from 'react-icons/fa';
 import { Link, useLoaderData } from 'react-router-dom';
-import { ThemeContext } from '../../layout/Main/Main';
+
 import LeftNav from '../LeftNav/LeftNav';
 import Pdf from "react-to-pdf";
+import { ThemeContext } from '../../layout/Main/Main';
 
 const CourseDetails = () => {
     const seeDetails = useLoaderData()

@@ -28,7 +28,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: "/FAQ",
-                element: <h1>hi</h1>,
+                element: <div className="h-96"><h1>hi</h1></div>,
             },
             {
                 path: "/blog",
