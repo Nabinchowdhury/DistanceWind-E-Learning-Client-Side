@@ -21,7 +21,7 @@ const CourseDetails = () => {
     return (
 
 
-        <div className='flex flex-col lg:grid lg:grid-cols-6 xl:grid-cols-4 gap-4 '>
+        <div className='flex flex-col lg:grid lg:grid-cols-6 xl:grid-cols-4 gap-4 mb-10'>
             <div className='lg:col-span-2 xl:col-span-1 '>
                 <div className={`mt-6 sticky top-20 h-auto`}>
                     <div className={`${ETheme ? 'themeLight' : "themeDark"}  rounded-2xl `}>
@@ -33,7 +33,7 @@ const CourseDetails = () => {
             </div>
             <div className={`lg:col-span-4 xl:col-span-3 `}>
 
-                <div className='h-screen '>
+                <div className=' '>
                     <div className="card xl:card-side bg-transparent shadow-xl mt-7 sticky top-20">
                         <figure><img className='h-full w-full' src={image} alt="Album" /></figure>
 

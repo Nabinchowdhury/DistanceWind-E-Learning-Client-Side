@@ -22,7 +22,7 @@ const UserProfile = () => {
         setLoading(false)
     }
     return (
-        <form className="hero mt-20 " onSubmit={handleSubmit}>
+        <form className="hero mt-20 mb-10" onSubmit={handleSubmit}>
             <div className="card w-full max-w-lg shadow-2xl bg-base-100">
                 <div className="card-body bg-white">
                     <h4 className='text-black font-bold ms-2 text-xl'>Edit Profile</h4>

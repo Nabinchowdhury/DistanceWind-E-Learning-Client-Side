@@ -26,7 +26,7 @@ const PremiumAccess = () => {
     }
 
     return (
-        <div className={`flex flex-col lg:grid lg:grid-cols-6 xl:grid-cols-4 gap-4 mt-10`} >
+        <div className={`flex flex-col lg:grid lg:grid-cols-6 xl:grid-cols-4 gap-4 my-10`} >
 
 
             <div className={`lg:col-span-2 xl:col-span-1 `}>
@@ -46,9 +46,9 @@ const PremiumAccess = () => {
 
             <div className={`lg:col-span-4 xl:col-span-3 `}>
 
-                <div className='lg:h-screen w-3/4 mx-auto'>
+                <div className=' w-3/4 mx-auto'>
                     <div className={`${coupon ? "block" : "hidden"} `}>
-                        <h1>there willl be something</h1>
+
                         <div className={`card w-full  shadow-xl image-full ${ETheme ? 'themeLight' : "themeDark"}`}>
                             <figure><img src="" alt="Shoes" /></figure>
                             <div className="card-body">
