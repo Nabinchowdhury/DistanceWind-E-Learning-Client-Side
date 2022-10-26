@@ -1,6 +1,6 @@
 import React from 'react';
 import { useContext } from 'react';
-import { FaCoins, FaDollarSign } from 'react-icons/fa';
+import { FaArrowRight, FaCoins, FaDollarSign } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { ThemeContext } from '../../../layout/Main/Main';
 
@@ -18,7 +18,7 @@ const CourseCard = ({ course }) => {
                         <div className="badge badge-secondary">{coins} <FaCoins className='ml-2'></FaCoins></div>
                     </h2>
                     <div className="card-actions  mt-5">
-                        <Link to={`/course/${id}`}><button className='btn btn-warning'>Get Premium Access <FaDollarSign className='ml-2'></FaDollarSign></button></Link>
+                        <Link to={`/course/${id}`}><button className='btn btn-warning'>See Details <FaArrowRight className='ml-2'></FaArrowRight></button></Link>
                     </div>
                 </div>
             </div>

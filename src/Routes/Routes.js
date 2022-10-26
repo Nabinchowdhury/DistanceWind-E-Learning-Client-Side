@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import CourseDetails from "../components/pages/Courses/CourseDetails/CourseDetails";
 import Courses from "../components/pages/Courses/Courses/Courses";
 import ErrorPage from "../components/pages/ErrorPage/ErrorPage";
 import Home from "../components/pages/Home/Home";
@@ -46,6 +47,11 @@ export const routes = createBrowserRouter([
             },
             {
                 path: "/course/:id",
+                loader: ({ params }) => fetch(`https://b610-learning-platform-server-nabinchowdhury.vercel.app/course/${params.id}`),
+                element: <CourseDetails></CourseDetails>,
+            },
+            {
+                path: "/premium/:id",
                 loader: ({ params }) => fetch(`https://b610-learning-platform-server-nabinchowdhury.vercel.app/course/${params.id}`),
                 element: <PrivateRoute><PremiumAccess></PremiumAccess></PrivateRoute>,
             },

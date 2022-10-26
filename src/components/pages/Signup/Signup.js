@@ -72,9 +72,9 @@ const Signup = () => {
 
                         <div className="form-control border-0 ">
                             <label className="label">
-                                <span className="label-text text-lg text-black">User Name</span>
+                                <span className="label-text text-lg text-black">Full Name</span>
                             </label>
-                            <input type="text" name="name" placeholder="User Name" className="input w-full p-2 bg-slate-100 text-black" />
+                            <input type="text" name="name" placeholder="Full Name" className="input w-full p-2 bg-slate-100 text-black" />
                         </div>
 
                         <div className="form-control border-0 ">

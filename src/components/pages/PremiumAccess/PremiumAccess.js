@@ -37,10 +37,10 @@ const PremiumAccess = () => {
                     </div>
                 </div>
             </div>
-            <div className={`lg:col-span-4 xl:col-span-3`}>
+            <div className={`lg:col-span-4 xl:col-span-3 `}>
 
-                <div className='h-screen'>
-                    <div className={coupon ? "block" : "hidden"}>
+                <div className='h-screen '>
+                    <div className={`${coupon ? "block" : "hidden"} `}>
                         <h1>there willl be something</h1>
                         <div className="mockup-window border border-base-300">
                             <div className="flex justify-center px-4 py-16 border-t border-base-300">Hello!</div>
@@ -49,38 +49,17 @@ const PremiumAccess = () => {
 
 
 
-                    <div className="card xl:card-side bg-transparent shadow-xl mt-7">
+                    <div className="card xl:card-side bg-transparent shadow-xl mt-7 sticky top-20">
                         <figure><img className='h-full w-full' src={image} alt="Album" /></figure>
+
+
                         <div className="card-body">
-                            <h2 className="card-title font-bold">Course : {title}</h2>
+                            <h2 className="card-title font-bold text-xl">Course : {title}</h2>
+
                             <div className='flex justify-center items-center'><p className='flex justify-left items-center text-xl'>Price: {price}  <FaDollarSign ></FaDollarSign> / {coins} <FaCoins className='ml-2'></FaCoins> </p>
                                 <button className='btn btn-outline btn-primary font-bold'><FaArrowLeft className='mr-2'></FaArrowLeft> Get Course</button>
                             </div>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni possimus laudantium, quod quae praesentium error porro maxime numquam laborum exercitationem dolor accusamus voluptates delectus, perspiciatis, soluta eius sunt omnis voluptatum.</p>
-
-                            <div className="card-actions justify-center">
-                                <div className="stats w-full stats-vertical sm:stats-horizontal shadow">
-
-                                    <div className="stat place-items-center">
-                                        <div className="stat-title">Duration</div>
-                                        <div className="stat-value">{Duration}/day</div>
-                                        <div className="stat-desc">From January 1st to February 1st</div>
-                                    </div>
-
-                                    <div className="stat place-items-center">
-                                        <div className="stat-title">Lessons</div>
-                                        <div className="stat-value text-secondary">{lessons}/week</div>
-                                        <div className="stat-desc text-secondary">↗︎ 40 (2%)</div>
-                                    </div>
-
-                                    <div className="stat place-items-center">
-                                        <div className="stat-title">Achieve on complete</div>
-                                        <div className="stat-value flex justify-left items-center">{coins / 10} <FaCoins className='ml-2'></FaCoins></div>
-                                        <div className="stat-desc">↘︎ 90 (14%)</div>
-                                    </div>
-
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
