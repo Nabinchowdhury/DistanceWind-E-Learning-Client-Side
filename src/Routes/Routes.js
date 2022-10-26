@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import Blogs from "../components/pages/Blogs/Blogs";
 import CourseDetails from "../components/pages/Courses/CourseDetails/CourseDetails";
 import Courses from "../components/pages/Courses/Courses/Courses";
 import ErrorPage from "../components/pages/ErrorPage/ErrorPage";
@@ -30,8 +31,8 @@ export const routes = createBrowserRouter([
                 element: <h1>hi</h1>,
             },
             {
-                path: "/blogs",
-                element: <h1>hi</h1>,
+                path: "/blog",
+                element: <Blogs></Blogs>,
             },
             {
                 path: "/login",
