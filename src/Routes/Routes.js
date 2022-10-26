@@ -4,6 +4,7 @@ import ErrorPage from "../components/pages/ErrorPage/ErrorPage";
 import Home from "../components/pages/Home/Home";
 import Main from "../components/pages/layout/Main/Main";
 import Login from "../components/pages/Login/Login";
+import PremiumAccess from "../components/pages/PremiumAccess/PremiumAccess";
 import PrivateRoute from "../components/pages/PrivateRoute/PrivateRoute";
 import Signup from "../components/pages/Signup/Signup";
 import UserProfile from "../components/pages/UserProfile/UserProfile";
@@ -20,7 +21,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: "/courses",
-                loader: () => fetch("http://localhost:5000/courses"),
+                loader: () => fetch("https://b610-learning-platform-server-nabinchowdhury.vercel.app/courses"),
                 element: <Courses></Courses>,
             },
             {
@@ -41,12 +42,12 @@ export const routes = createBrowserRouter([
             },
             {
                 path: "/profile",
-                element: <UserProfile ></UserProfile>,
+                element: <PrivateRoute><UserProfile ></UserProfile></PrivateRoute>,
             },
             {
                 path: "/course/:id",
-                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`),
-                element: <PrivateRoute><h1>private</h1></PrivateRoute>,
+                loader: ({ params }) => fetch(`https://b610-learning-platform-server-nabinchowdhury.vercel.app/course/${params.id}`),
+                element: <PrivateRoute><PremiumAccess></PremiumAccess></PrivateRoute>,
             },
 
 

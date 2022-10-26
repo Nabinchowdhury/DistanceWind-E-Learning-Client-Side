@@ -8,7 +8,6 @@ import { AuthContext } from '../Contexts/AuthProvider/AuthProvider';
 const Header = () => {
     const { ETheme, setETheme } = useContext(ThemeContext)
     const { user, logUserOut } = useContext(AuthContext)
-    console.log(user)
 
     const handleLogOut = () => {
         logUserOut()
