@@ -29,7 +29,7 @@ const Header = () => {
                             {user ?
                                 <>
                                     <button className='btn btn-outline btn-error btn-sm w-1/2 my-2' onClick={handleLogOut}>Log out</button>
-                                    <Link to="/profile" className="tooltip tooltip-right  w-1/4 border" data-tip={user?.displayName || user?.email}>
+                                    <Link to="/profile" className="tooltip tooltip-right  w-1/4 " data-tip={user?.displayName || user?.email}>
                                         {user?.photoURL ? <img src={user?.photoURL} alt="" className='h-12 rounded-full' /> : <FaUserCircle className='rounded-full text-4xl mt-1'></FaUserCircle>}
                                     </Link>
                                 </>

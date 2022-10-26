@@ -8,7 +8,6 @@ import Header from '../../../Header/Header';
 export const ThemeContext = createContext();
 const Main = () => {
     const [ETheme, setETheme] = useState(true)
-    console.log(ETheme)
     const themeToggler = { ETheme, setETheme }
     return (
         <ThemeContext.Provider value={themeToggler}>

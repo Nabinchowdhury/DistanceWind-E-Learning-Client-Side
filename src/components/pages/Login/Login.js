@@ -6,8 +6,9 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
-    const { logUserIn, providerSignin } = useContext(AuthContext)
+    const { logUserIn, providerSignin, forgotPassword } = useContext(AuthContext)
     const [error, setError] = useState("")
+    const [email, setEmail] = useState("")
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || "/"
@@ -61,6 +62,21 @@ const Login = () => {
                 toast.error('Sign in failed!');
             })
     }
+    const handleGetEmail = (e) => {
+        setEmail(e.target.value)
+        console.log(email)
+    }
+    const handleForgotPassword = () => {
+        if (!email) {
+            return toast.error("Please enter your email")
+        }
+        forgotPassword(email)
+            .then(() => {
+                toast.success("A reset email has sent to your email id. If not Foud in inbox, please check your spam folder")
+            }).catch(() => {
+                toast.error("Wrong email!")
+            })
+    }
 
     return (
         <div >
@@ -72,7 +88,7 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text text-lg text-black">Email</span>
                             </label>
-                            <input type="email" name="email" placeholder="Email" className="input w-full p-2 bg-slate-100 text-black" required />
+                            <input type="email" name="email" placeholder="Email" className="input w-full p-2 bg-slate-100 text-black" onBlur={handleGetEmail} required />
 
                         </div>
                         <div className="form-control border-0">
@@ -81,8 +97,9 @@ const Login = () => {
                             </label>
                             <input type="password" name="password" placeholder="Password" className="input w-full p-2 bg-slate-100 text-black" required />
 
-                            <p className="text-right my-3">
-                                <Link className='underline  text-yellow-400 font-medium hover:text-yellow-500'> Forgot Password?</Link>
+                            <p className="text-right my-3 ">
+                                <Link className='underline  text-yellow-400 font-medium hover:text-yellow-500'
+                                    onClick={handleForgotPassword}> Forgot Password?</Link>
                             </p>
                         </div>
                         <p className='text-red-500 font-bold'>{error}</p>
