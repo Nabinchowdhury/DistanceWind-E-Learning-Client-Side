@@ -4,10 +4,12 @@ import toast from 'react-hot-toast';
 import { FaUserCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
+import { ThemeContext } from '../layout/Main/Main';
 
 const UserProfile = () => {
 
     const { user, updateUserProfile, setLoading } = useContext(AuthContext)
+    const { ETheme } = useContext(ThemeContext)
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -37,7 +39,7 @@ const UserProfile = () => {
                         <label className="label">
                             <span className="label-text text-lg text-black">Email</span>
                         </label>
-                        <input type="email" name="email" placeholder="Email" value={user?.email} className="input w-full p-2 bg-slate-100 text-black font-bold" />
+                        <input type="email" name="email" placeholder="Email" value={user?.email} className={`input w-full p-2 bg-slate-100 ${ETheme ? "text-black " : "text-white"} font-bold `} disabled />
                     </div>
 
                     <div className="form-control border-0 ">
