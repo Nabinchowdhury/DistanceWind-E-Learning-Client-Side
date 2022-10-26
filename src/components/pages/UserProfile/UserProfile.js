@@ -7,7 +7,8 @@ import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const UserProfile = () => {
 
-    const { user, updateUserProfile } = useContext(AuthContext)
+    const { user, updateUserProfile, setLoading } = useContext(AuthContext)
+
     const handleSubmit = (event) => {
         event.preventDefault()
         const form = event.target
@@ -18,6 +19,7 @@ const UserProfile = () => {
             .then(() => { })
             .catch(() => { })
         toast.success('Successfully updated! Please Reload the page to view your updates');
+        setLoading(false)
     }
     return (
         <form className="hero mt-20 " onSubmit={handleSubmit}>

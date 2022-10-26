@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Contexts/AuthProvider/AuthProvider';
 
 const Signup = () => {
-    const { createNewUser, providerSignin, updateUserProfile } = useContext(AuthContext)
+    const { createNewUser, providerSignin, updateUserProfile, setLoading } = useContext(AuthContext)
     const [error, setError] = useState("")
     const navigate = useNavigate()
 
@@ -27,6 +27,7 @@ const Signup = () => {
                     .catch(() => { })
                 navigate('/courses')
                 setError("")
+                setLoading(false)
                 toast.success('Successfully Signed in!');
             })
             .catch(error => {

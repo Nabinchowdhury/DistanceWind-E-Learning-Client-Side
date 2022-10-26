@@ -1,8 +1,7 @@
 import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
-import { FaArrowLeft, FaCoins, FaDollarSign } from 'react-icons/fa';
+import { FaCoins, FaDollarSign } from 'react-icons/fa';
 import { useLoaderData } from 'react-router-dom';
-import LeftNav from '../Courses/LeftNav/LeftNav';
 import { ThemeContext } from '../layout/Main/Main';
 
 const PremiumAccess = () => {
@@ -20,7 +19,7 @@ const PremiumAccess = () => {
     }
     const handleBuying = () => {
         if (buyButton) {
-            return toast.error("Already bought")
+            return toast.error("Already collected")
         }
         toast.success("You Succeessfully got the Course")
         setBuyButton(true)
