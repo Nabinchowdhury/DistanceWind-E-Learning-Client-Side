@@ -75,7 +75,7 @@ const PremiumAccess = () => {
 
                         </div>
                     </div>
-                    <div className="stats w-full stats-vertical md:stats-horizontal shadow h-32">
+                    <div className="stats w-full stats-vertical md:stats-horizontal shadow ">
 
                         <div className="stat place-items-center">
                             <div className="stat-title">Duration</div>

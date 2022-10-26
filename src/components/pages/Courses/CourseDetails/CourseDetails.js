@@ -7,14 +7,14 @@ import Pdf from "react-to-pdf";
 
 const CourseDetails = () => {
     const seeDetails = useLoaderData()
-    const { id, title, image, Duration, lessons, price, coins } = seeDetails
+    const { id, title, image, Duration, lessons, price, coins, details } = seeDetails
 
     const { ETheme } = useContext(ThemeContext)
     const [coursNames, setCourseNames] = useState([])
 
     const ref = React.createRef();
     useEffect(() => {
-        fetch(`https://b610-learning-platform-server-nabinchowdhury.vercel.app/courses`)
+        fetch(`https://b610-learning-platform-server.vercel.app/courses`)
             .then(res => res.json())
             .then(data => setCourseNames(data))
     })
@@ -42,19 +42,19 @@ const CourseDetails = () => {
                             <h2 className="card-title font-bold text-xl">Course : {title}</h2>
 
                             <div className='flex justify-center items-center'>
-                                <p className='flex justify-left items-center text-xl'>Price: {price}  <FaDollarSign ></FaDollarSign> / {coins} <FaCoins className='ml-2'></FaCoins>
+                                <p className='flex justify-left items-center text-xl font-medium'>Price: {price}  <FaDollarSign ></FaDollarSign> / {coins} <FaCoins className='ml-2'></FaCoins>
                                 </p>
                                 <Pdf targetRef={ref} filename={`${title}.pdf`}>
                                     {({ toPdf }) => <button className='btn btn-secondary' onClick={toPdf}>Download PDF <FaDownload className='ml-2'></FaDownload></button>}
                                 </Pdf>
 
                             </div>
-                            <p>Dedicated time needed: {Duration}/ day </p>
-                            <p>Course Lessons : {lessons}/ week</p>
-                            <p>Details: Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni possimus laudantium, quod quae praesentium error porro maxime numquam laborum exercitationem dolor accusamus voluptates delectus, perspiciatis, soluta eius sunt omnis voluptatum.</p>
+                            <p><li> <span className='underline font-medium'>Dedicated time needed</span>:  {Duration}/ day </li></p>
+                            <p><li> <span className='underline font-medium'>Course Lessons </span>:  {lessons}/ week </li></p>
+                            <p><li> <span className='underline font-medium'>Details</span>:  {details} </li></p>
 
-                            <div className="card-actions justify-left h-32">
-                                <div className="stats w-full stats-vertical md:stats-horizontal shadow h-32">
+                            <div className="card-actions justify-left ">
+                                <div className="stats w-full stats-vertical md:stats-horizontal shadow ">
 
                                     <div className="stat place-items-center">
                                         <div className="stat-title">Duration</div>

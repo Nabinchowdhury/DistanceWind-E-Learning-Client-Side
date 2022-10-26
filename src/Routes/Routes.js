@@ -23,7 +23,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: "/courses",
-                loader: () => fetch("https://b610-learning-platform-server-nabinchowdhury.vercel.app/courses"),
+                loader: () => fetch("https://b610-learning-platform-server.vercel.app/courses"),
                 element: <Courses></Courses>,
             },
             {
@@ -48,12 +48,12 @@ export const routes = createBrowserRouter([
             },
             {
                 path: "/course/:id",
-                loader: ({ params }) => fetch(`https://b610-learning-platform-server-nabinchowdhury.vercel.app/course/${params.id}`),
+                loader: ({ params }) => fetch(`https://b610-learning-platform-server.vercel.app/course/${params.id}`),
                 element: <CourseDetails></CourseDetails>,
             },
             {
                 path: "/premiumCheckout/:id",
-                loader: ({ params }) => fetch(`https://b610-learning-platform-server-nabinchowdhury.vercel.app/course/${params.id}`),
+                loader: ({ params }) => fetch(`https://b610-learning-platform-server.vercel.app/course/${params.id}`),
                 element: <PrivateRoute><PremiumAccess></PremiumAccess></PrivateRoute>,
             },
 
