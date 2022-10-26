@@ -45,17 +45,17 @@ const CourseDetails = () => {
                             <p>Details: Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni possimus laudantium, quod quae praesentium error porro maxime numquam laborum exercitationem dolor accusamus voluptates delectus, perspiciatis, soluta eius sunt omnis voluptatum.</p>
 
                             <div className="card-actions justify-left h-32">
-                                <div className="stats w-full stats-vertical sm:stats-horizontal shadow h-32">
+                                <div className="stats w-full stats-vertical md:stats-horizontal shadow h-32">
 
                                     <div className="stat place-items-center">
                                         <div className="stat-title">Duration</div>
-                                        <div className="stat-value">{Duration}/day</div>
+                                        <div className="stat-value text-2xl">{Duration}/day</div>
                                         <div className="stat-desc">From January 1st to February 1st</div>
                                     </div>
 
                                     <div className="stat place-items-center">
                                         <div className="stat-title">Lessons</div>
-                                        <div className="stat-value text-secondary">{lessons}/week</div>
+                                        <div className="stat-value text-secondary text-3xl">{lessons}/week</div>
                                         <div className="stat-desc text-secondary">↗︎ 40 (2%)</div>
                                     </div>
 
@@ -67,7 +67,7 @@ const CourseDetails = () => {
 
                                 </div>
                             </div>
-                            <Link to={`/premium/${id}`}><button className='btn btn-error font-bold w-full md:w-1/2 mt-5'>Get Premium Access<FaArrowRight className='ml-2'></FaArrowRight> </button></Link>
+                            <Link to={`/premiumCheckout/${id}`}><button className='btn btn-error font-bold w-full md:w-1/2 mt-5'>Get Premium Access<FaArrowRight className='ml-2'></FaArrowRight> </button></Link>
                         </div>
                     </div>
                 </div>

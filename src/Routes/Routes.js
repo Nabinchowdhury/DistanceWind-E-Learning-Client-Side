@@ -51,7 +51,7 @@ export const routes = createBrowserRouter([
                 element: <CourseDetails></CourseDetails>,
             },
             {
-                path: "/premium/:id",
+                path: "/premiumCheckout/:id",
                 loader: ({ params }) => fetch(`https://b610-learning-platform-server-nabinchowdhury.vercel.app/course/${params.id}`),
                 element: <PrivateRoute><PremiumAccess></PremiumAccess></PrivateRoute>,
             },

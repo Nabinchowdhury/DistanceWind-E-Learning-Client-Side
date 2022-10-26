@@ -4,7 +4,7 @@ import { Link, useRouteError } from 'react-router-dom';
 const ErrorPage = () => {
     const error = useRouteError();
     return (
-        <div>
+        <div className='text-center'>
 
             <h1 className='text-6xl font-600 my-10'>Ops! Unexpected Error Occured</h1>
             <h3 className='text-3xl font-bold  text-red-500'>{error && (error.statusText || error.message)}</h3>
