@@ -22,7 +22,7 @@ const CourseDetails = () => {
     return (
 
 
-        <div className='flex flex-col lg:grid lg:grid-cols-6 xl:grid-cols-4 gap-4 mb-10'>
+        <div className='flex flex-col-reverse lg:flex-col lg:grid lg:grid-cols-6 xl:grid-cols-4 gap-4 mb-10'>
             <div className='lg:col-span-2 xl:col-span-1 '>
                 <div className={`mt-6 sticky top-20 h-auto`}>
                     <div className={`${ETheme ? 'themeLight' : "themeDark"}  rounded-2xl `}>
@@ -44,7 +44,7 @@ const CourseDetails = () => {
                             <h1 className='text-center font-extrabold text-lg sm:text-xl md:text-2xl lg:text-3xl  mb-5'>Course Details</h1>
                             <h2 className="card-title font-bold text-xl">Course : {title}</h2>
 
-                            <div className='flex justify-center items-center'>
+                            <div className='flex flex-col sm:flex-row justify-center items-left'>
                                 <p className='flex justify-left items-center text-xl font-medium'>Price: {price}  <FaDollarSign ></FaDollarSign> / {coins} <FaCoins className='ml-2'></FaCoins>
                                 </p>
                                 <Pdf targetRef={ref} filename={`${title}.pdf`}>

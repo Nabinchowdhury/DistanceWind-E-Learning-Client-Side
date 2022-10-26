@@ -32,7 +32,7 @@ const PremiumAccess = () => {
 
             <div className={`lg:col-span-2 xl:col-span-1 `}>
                 <div className={`mt-6 sticky top-20 h-auto`}>
-                    <div className={`${ETheme ? 'themeLight' : "themeDark"}  rounded-2xl w-3/4 mx-auto lg:w-full `}>
+                    <div className={`${ETheme ? 'themeLight' : "themeDark"}  rounded-2xl md:w-3/4 mx-auto lg:w-full `}>
                         <div className="card  bg-black opacity-70  shadow-xl ">
                             <div className="card-body ">
                                 <h2 className="card-title mx-auto text-white ">Offers and Achievements</h2>
@@ -47,7 +47,7 @@ const PremiumAccess = () => {
 
             <div className={`lg:col-span-4 xl:col-span-3 `}>
 
-                <div className=' w-3/4 mx-auto'>
+                <div className=' md:w-3/4 mx-auto'>
                     <div className={`${coupon ? "block" : "hidden"} `}>
 
                         <div className={`card w-full  shadow-xl image-full ${ETheme ? 'themeLight' : "themeDark"}`}>
@@ -64,7 +64,7 @@ const PremiumAccess = () => {
 
 
 
-                    <div className="card xl:card-side bg-transparent shadow-xl mt-7 sticky top-20">
+                    <div className="card xl:card-side bg-transparent shadow-xl mt-7 ">
                         <figure className='xl:w-1/2'><img className='h-full w-full' src={image} alt="Album" /></figure>
 
 
