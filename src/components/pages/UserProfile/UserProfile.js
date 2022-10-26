@@ -18,10 +18,13 @@ const UserProfile = () => {
         const photoURL = form.photoURL.value || user?.photoURL
         const profile = { displayName: name, photoURL: photoURL }
         updateUserProfile(profile)
-            .then(() => { })
-            .catch(() => { })
-        toast.success('Successfully updated! Please Reload the page to view your updates');
-        setLoading(false)
+            .then(() => {
+                toast.success('Successfully updated! Please Reload the page to view your updates');
+                setLoading(false)
+            })
+            .catch(() => { toast.error('Ops!'); })
+
+
     }
     return (
         <form className="hero mt-20 mb-10" onSubmit={handleSubmit}>
