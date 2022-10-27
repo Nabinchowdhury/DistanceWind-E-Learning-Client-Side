@@ -81,7 +81,7 @@ const PremiumAccess = () => {
                     <div className={`${coupon ? "block" : "hidden"} `}>
 
                         <div className={`card w-full  shadow-xl image-full ${ETheme ? 'themeLight' : "themeDark"}`}>
-                            <figure><img src="" alt="Shoes" /></figure>
+                            <figure><img src="" alt="" /></figure>
                             <div className="card-body">
                                 <h2 className="card-title text-green-500">Offer!</h2>
                                 <p>Copngratulation!! You Have won a Lucky Coupon Card. Click on draw to scratch the Coupon.</p>
