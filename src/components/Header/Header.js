@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FaMoon, FaSun, FaUserCircle } from 'react-icons/fa';
 import { useContext } from 'react';
 import { ThemeContext } from '../pages/layout/Main/Main';
@@ -44,9 +44,12 @@ const Header = () => {
                 </div>
                 <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal p-0">
-                        <li className='px-1'><Link to="/courses">Courses</Link></li>
-                        <li className='px-1' ><Link to="/FAQ">FAQ </Link></li>
-                        <li className='px-1'><Link to="/blog">Blog</Link></li>
+                        <li className='px-1'><NavLink className={({ isActive }) =>
+                            isActive ? 'underline bg-transparent' : 'bg-transparent'} to="/courses">Courses</NavLink></li>
+                        <li className='px-1' ><NavLink className={({ isActive }) =>
+                            isActive ? 'underline bg-transparent' : 'bg-transparent'} to="/FAQ">FAQ </NavLink></li>
+                        <li className='px-1'><NavLink className={({ isActive }) =>
+                            isActive ? 'underline bg-transparent' : 'bg-transparent'} to="/blog">Blog</NavLink></li>
                         <li className='px-1'><Link onClick={() => setETheme(!ETheme)}>Theme {ETheme ? <FaSun></FaSun> : <FaMoon></FaMoon>}</Link></li>
                         {user ?
                             <>

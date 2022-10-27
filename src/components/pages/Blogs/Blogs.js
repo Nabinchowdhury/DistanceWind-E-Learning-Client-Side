@@ -2,7 +2,7 @@ import React from 'react';
 
 const Blogs = () => {
     return (
-        <div className='mt-10 lg:m-10 h-screen'>
+        <div className='mt-10 lg:m-10 pb-24'>
             <div tabIndex={0} className="collapse collapse-arrow border border-base-300 bg-transparent rounded-box  w-full">
                 <div className="collapse-title text-xl font-bold">
                     What is CORS?
