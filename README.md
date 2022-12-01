@@ -24,6 +24,7 @@ For Client Side:
     •  Hosted in Firebase app.
  
 For Server Side:
+\
     •  express, cors are installed first.
     •  courses.json file is created manually
     •  different API links (static/ dynamics) are created for fetching data and response is sent according to the links.
